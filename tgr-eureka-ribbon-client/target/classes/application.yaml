@@ -11,3 +11,4 @@ eureka:
   client: 
     serviceUrl: 
       defaultZone: http://peer1:8761/eureka/ #服务注册地址
+      
