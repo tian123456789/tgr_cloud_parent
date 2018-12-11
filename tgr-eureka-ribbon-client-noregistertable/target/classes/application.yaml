@@ -1,0 +1,11 @@
+####################模拟负载均衡注册列表缓存###################
+stores:
+  ribbon:
+    listOfServers: baidu.com,google.com   #配置服务实例的URL
+ribbon:
+  eureka:
+    enable: false   #禁止调用EUREKA CLIENT获取注册列表
+server:
+  port: 8766
+
+####################模拟负载均衡注册列表缓存###################
