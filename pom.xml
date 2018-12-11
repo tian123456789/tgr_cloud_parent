@@ -11,6 +11,8 @@
 	<modules>
 		<module>tgr_cloud_server</module>
 		<module>tgr_cloud_client</module>
+		<module>eureka-ribbon-client</module>
+		<module>tgr-eureka-ribbon-client</module>
 	</modules>
 
 	<properties>

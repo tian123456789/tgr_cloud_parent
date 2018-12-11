@@ -1,12 +1,26 @@
 server.port: 8080
 spring.profiles.active: 
+eureka: 
+  client: 
+    # registration failed Cannot execute request on any known server
+    #避免自己注册自己并没有实质上解决此问题
+    registerWithEureka: false #防止 自 己注册 自 己
+    fetchRegistry: false  #防止 自 己注册 自 己
 #启动
 #java -jar -Dspring.profiles.active=b tgr_cloud_server-1.0-SNAPSHOT.jar
 #java -jar -Dspring.profiles.active=a tgr_cloud_server-1.0-SNAPSHOT.jar
+
 #Maven启动指定Profile通过-P，如mvn spring-boot:run -Ptest，但这是Maven的Profile。
+
 #如果要指定spring-boot的spring.profiles.active，则必须使用mvn spring-boot:run -Drun.profiles=test
+
 #如果使用命令行直接运行jar文件，则使用java -jar -Dspring.profiles.active=test demo-0.0.1-SNAPSHOT.jar
+
 #如果使用开发工具，运行Application.java文件启动，则增加参数--spring.profiles.active=test
+
+#文件转码https://bbs.csdn.net/topics/350163099
+# native2ascii -encoding ascii hosts hosts2
+
 
 ########################非集群方式########################
 #默认端口号
@@ -38,10 +52,6 @@ spring.profiles.active:
 #然后再修改本地hosts  C:\Windows\System32\drivers\etc  hosts
 #127.0.0.1  peer1
 #127.0.0.1 peer2
-#文件转码https://bbs.csdn.net/topics/350163099
-# native2ascii -encoding ascii hosts hosts2
-
-
 
 ##########################集群方式 采用多profile的格式######################
  

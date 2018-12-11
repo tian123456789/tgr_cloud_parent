@@ -9,6 +9,6 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 public class TgrCloudServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TgrCloudServerApplication.class);
+		SpringApplication.run(TgrCloudServerApplication.class,args);
 	}
 }

@@ -1,0 +1,13 @@
+#java.lang.IllegalStateException: Request URI does not contain a valid hostname: http://tgr_cloud_client/hi?name=forezp
+#使用ribbon实现负载均衡的时候，服务名称不能用下划线，换成中划线。
+spring: 
+  application:
+    name: tgr-eureka-ribbon-client
+
+server:
+  port: 8764
+
+eureka: 
+  client: 
+    serviceUrl: 
+      defaultZone: http://peer1:8761/eureka/ #服务注册地址

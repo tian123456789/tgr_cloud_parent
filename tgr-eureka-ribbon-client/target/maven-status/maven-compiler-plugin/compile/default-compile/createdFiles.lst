@@ -1,0 +1,4 @@
+com\tgr\controller\RibbonController.class
+com\tgr\config\RibbonConfig.class
+com\tgr\TgrEurekaRibbonClientApplication.class
+com\tgr\ribbon\RibbonService.class
