@@ -19,6 +19,33 @@ springCloud ribbon使用方式:
 就可以根据具体的 ！Rule 的策略来进行负载均衡。
 最后 ，回到问题的本身，为什么在 RestTemplate 类的 Bean 上加一个＠LoadBalance 注解就
 可以使用 Ribbon 的负载均衡呢？
+	全局搜索（ IDEA 的快捷键为“ Ctrl ＂＋ “ Shift ＂＋ “F ”〉 查看有哪些类用到了＠LoadBalanced
+注解。通过搜索，可以发现 LoadBalancerAutoConfiguration 类（ LoadBalancer 向动配置类〉使
+用到了该注解， LoadBalancerAutoConfiguration 类的代码如下 ：
+
+#########################################################################################################
+p117
+
+在 LoadBalancerAutoConfiguration 类中 ， 首先维护了 一 个被@LoadBalanced 修饰的
+RestTemplate 对象的 L ist 。在初始化的过程中，通过调用 customizer.customize(restTemplate）方
+法来给 RestTemplate 增加拦截器 LoadBalancerlnterceptor 。 LoadBalancerinterceptor 用于实时拦
+截，在 LoadBalancerlnterceptor 中 实现了负载均衡的方法。 LoadBalancerlnterceptor 类的拦截方
+法的代码如下：
+自 Override
+publi C ClientHttpResponse intercept(final HttpRequest request , final byte[] body,
+	final ClientHttpRequestExecuti on execution) throws IOException
+	final URI originalUrl＝ request . getURI();
+	String serviceName = originalUri getHost() ;
+	return this. loadBalancer . execute (servceName , requestFactory.createRequest (request ,
+	body , execution) );
+综上所述 ， Ribbon 的负载均衡主要是通过 LoadBalancerClient 来实现的，而 LoadBalancerClient 具体交给了 ILoadBalancer 来处理， ILoadBalancer 通过配置 IRule 、 IPing 等，向 EurekaClient
+获取注册列表的信息，默认每 10 秒向 EurekaClient 发送一次“ping ”， 进而检查是否需要更新
+服务的注册列表信息 。最后 ，在得到服务注册列表信息后， ILoadBalancer 根据！Rule 的策略进
+行负载均衡。
+而 RestTemplate 加上@LoadBalance 注解后，在远程调度时能够负载均衡， 主要是维护了
+一个被@LoadBalance 注解的 RestTemplate 列表，并给该列表中 的 RestTemplate 对象添加了拦
+截器。在拦截器的方法中 ，将远程调度方法交给了 Ribbon 的负载均衡器 LoadBalancerClient
+去处理，从而达到了负载均衡的目的 。
 
 ####################################################################################################################################################################################################################
 
