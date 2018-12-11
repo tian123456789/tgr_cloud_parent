@@ -5,7 +5,7 @@ spring:
     name: tgr-eureka-ribbon-client
 
 server:
-  port: 8764
+  port: 8765
 
 eureka: 
   client: 

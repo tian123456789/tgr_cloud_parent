@@ -14,7 +14,8 @@ public class RibbonConfig {
 	private RestTemplateBuilder restTemplateBuildder;
 	
 	@Bean
-	@LoadBalanced//Annotation to mark a RestTemplate bean to be configured to use a LoadBalancerClient
+	@LoadBalanced//加载负载均衡
+				 //Annotation to mark a RestTemplate bean to be configured to use a LoadBalancerClient
 				 //springCloud注解 
 				 //Spring Cloud的commons模块提供了一个@LoadBalanced注解，方便我们对RestTemplate添加一个LoadBalancerClient，
 				 //以实现客户端负载均衡。通过源码可以发现这是一个标记注解：
