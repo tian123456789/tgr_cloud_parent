@@ -23,7 +23,8 @@ springCloud ribbon使用方式:
 注解。通过搜索，可以发现 LoadBalancerAutoConfiguration 类（ LoadBalancer 向动配置类〉使
 用到了该注解， LoadBalancerAutoConfiguration 类的代码如下 ：
 
-#########################################################################################################
+####################################################################################################################################################################################################################
+
 p117
 
 在 LoadBalancerAutoConfiguration 类中 ， 首先维护了 一 个被@LoadBalanced 修饰的
@@ -32,7 +33,7 @@ RestTemplate 对象的 L ist 。在初始化的过程中，通过调用 customiz
 截，在 LoadBalancerlnterceptor 中 实现了负载均衡的方法。 LoadBalancerlnterceptor 类的拦截方
 法的代码如下：
 自 Override
-publi C ClientHttpResponse intercept(final HttpRequest request , final byte[] body,
+public ClientHttpResponse intercept(final HttpRequest request , final byte[] body,
 	final ClientHttpRequestExecuti on execution) throws IOException
 	final URI originalUrl＝ request . getURI();
 	String serviceName = originalUri getHost() ;

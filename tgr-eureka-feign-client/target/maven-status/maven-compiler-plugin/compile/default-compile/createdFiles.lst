@@ -1,0 +1,5 @@
+com\tgr\feign\service\TgrEurekaClientFeign.class
+com\tgr\service\impl\HiService.class
+com\tgr\feign\config\TgrFeignConfig.class
+com\tgr\controller\HiController.class
+com\tgr\TgrEurekaFeignClient.class

@@ -1,4 +1,4 @@
-spring.profiles.active:
+spring.profiles.active: a
 
 #java -jar -Dspring.profiles.active=b tgr_cloud_client-1.0-SNAPSHOT.jar
 #java -jar -Dspring.profiles.active=a tgr_cloud_client-1.0-SNAPSHOT.jar

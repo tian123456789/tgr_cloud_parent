@@ -14,6 +14,7 @@
 		<module>eureka-ribbon-client</module>
 		<module>tgr-eureka-ribbon-client</module>
 		<module>tgr-eureka-ribbon-client-noregistertable</module>
+		<module>tgr-eureka-feign-client</module>
 	</modules>
 
 	<properties>
