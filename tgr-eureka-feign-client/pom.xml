@@ -22,6 +22,25 @@
 		<artifactId>spring-cloud-starter-feign</artifactId>
 	</dependency>
 	
+	<!-- hystrix熔断器 -->
+	<dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-hystrix</artifactId>
+	</dependency>
+	
+	<!-- Hystrix熔断器监控 -->
+	<dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+	</dependency>
+		
+	<!-- Actuator 安全监控 -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+	</dependency>
+	<!-- Actuator 安全监控 -->
+	
 	<!-- 加上 feign-httpclient 的依赖， Feign 就会采用 HtψClient 作为网络请求
 	框架，而不是默认的 HttpURLConnection -->
 	<!-- <dependency>

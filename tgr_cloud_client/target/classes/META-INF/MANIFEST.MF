@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: tgr_cloud_client
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: tgr
+Implementation-Vendor-Id: com.tgr
+Build-Jdk: 1.8.0_40
+Implementation-URL: http://projects.spring.io/spring-boot/tgr_cloud_pa
+ rent/tgr_cloud_client/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

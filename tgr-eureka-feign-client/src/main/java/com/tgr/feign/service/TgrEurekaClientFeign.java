@@ -5,14 +5,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tgr.feign.config.TgrFeignConfig;
+import com.tgr.hystrix.HiHystrix;
 
 /**
  * @author tgr
  *	@FeignClient 声明一个Feign Client
  *	value为远程调用其他服务的服务名
  *	configuration为Feign Client的配之类
+ *	fallback 指定自己的熔断的返回逻辑处理类
  */
-@FeignClient(value = "tgr-cloud-client",configuration = TgrFeignConfig.class)
+@FeignClient(value = "tgr-cloud-client",
+			 configuration = TgrFeignConfig.class,fallback = HiHystrix.class)
 public interface TgrEurekaClientFeign {
 
 	/**
