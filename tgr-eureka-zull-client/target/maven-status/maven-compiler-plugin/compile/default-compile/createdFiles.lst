@@ -1,3 +1,4 @@
 com\tgr\hystrix\fallback\MyFallbackProvider.class
 com\tgr\TgrEurekaZuulClientApplication.class
+com\tgr\filter\MyFilter.class
 com\tgr\hystrix\fallback\MyFallbackProvider$1.class
