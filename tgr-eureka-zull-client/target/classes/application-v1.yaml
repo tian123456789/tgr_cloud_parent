@@ -1,0 +1,28 @@
+spring: 
+  application:  
+    name: tgr-service-zuul
+
+server:
+  port: 5000
+  
+eureka:
+  client: 
+    serviceUrl: 
+      defaultZone:  http://localhost:8761/eureka/
+      
+zuul: 
+  routes: 
+    hiapi: 
+      path: /hiapi/**
+      serviceId:  tgr-cloud-client  
+    ribbonapi:  
+      path: /ribbonapi/**
+      serviceId:  tgr-eureka-ribbon-client  
+    feignapi: 
+      path: /feignapi/**
+      serviceId:  tgr-eureka-fegin-client
+zuul.prefix: /v1
+
+
+#http://127.0.0.1:5000/v1/feignapi/hi 由v1版可知 zuul在路由转发做了负载均衡
+

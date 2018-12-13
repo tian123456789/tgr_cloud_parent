@@ -1,0 +1,30 @@
+spring: 
+  application:  
+    name: tgr-service-zuul
+
+server:
+  port: 5000
+  
+eureka:
+  client: 
+    serviceUrl: 
+      defaultZone:  http://localhost:8761/eureka/
+      
+#如果想自己指定url,并且想做负载均衡，那么只能自己维护负载均衡的服务注册列表
+#该注册列表名字为hiapi-v3 通过配置hipai-v3.ribbon.listOfServers来配置多个负载均衡的Url
+#并让ribbon不向eureka client获取服务注册列表 ribbon.eureka.enable:false
+
+zuul: 
+  routes: 
+    hiapi: 
+      path: /hiapi/**
+      serviceId:  hiapi-v3
+zuul.prefix: /v3
+ribbon: 
+  eureka: 
+    enabled:  false
+hiapi-v3:
+  ribbon:
+    listOfServers:  http://localhost:8763,http://localhost:8764  
+
+#如此 http://127.0.0.1:5000/v3/hiapi/hi?name=opop   8763 8764 两个服务提供者都分别调用打印了

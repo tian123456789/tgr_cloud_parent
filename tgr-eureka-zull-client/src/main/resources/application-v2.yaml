@@ -1,0 +1,27 @@
+spring: 
+  application:  
+    name: tgr-service-zuul
+
+server:
+  port: 5000
+  
+eureka:
+  client: 
+    serviceUrl: 
+      defaultZone:  http://localhost:8761/eureka/
+      
+#如果不需要用 Ribbon 做负载均衡，可以指定服务实例的 Uri ，用 zuul.routes.hiapi.url 配
+#置指定，这时就不需要配置 zuul.routes.hiapi.serviceld 了。 一旦指定了 Uri, Zuul 就不能做负
+#载均衡了，而是直接访问指定的 Uri，在实际的开发中这种做法是不可取的 。修改配置的代
+#码如  V2版本 下：
+
+zuul: 
+  routes: 
+    hiapi: 
+      path: /hiapi/**
+      url:  http://localhost:8763  
+zuul.prefix: /v2
+
+#此时无论怎么刷新 http://127.0.0.1:5000/v2/hiapi/hi?name=opop 
+#只显示
+#hi opop , i am from port:8763              8763指定的url

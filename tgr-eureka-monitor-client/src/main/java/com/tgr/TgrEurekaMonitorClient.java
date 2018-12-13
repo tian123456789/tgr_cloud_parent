@@ -6,6 +6,7 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 //http://127.0.0.1:8765/hystrix
+//http://127.0.0.1:8768/turbine.stream
 @SpringBootApplication
 @EnableHystrixDashboard
 @EnableTurbine//这都能忘，我也是醉了

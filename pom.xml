@@ -16,6 +16,7 @@
 		<module>tgr-eureka-ribbon-client-noregistertable</module>
 		<module>tgr-eureka-feign-client</module>
 		<module>tgr-eureka-monitor-client</module>
+		<module>tgr-eureka-zull-client</module>
 	</modules>
 
 	<properties>
