@@ -1,1 +1,2 @@
 E:\workspace\exiuge\tgr_cloud_parent\tgr-eureka-zull-client\src\main\java\com\tgr\TgrEurekaZuulClientApplication.java
+E:\workspace\exiuge\tgr_cloud_parent\tgr-eureka-zull-client\src\main\java\com\tgr\hystrix\fallback\MyFallbackProvider.java
